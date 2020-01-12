@@ -1,10 +1,19 @@
 $(document).ready(function () {
+    $("#addItem").click(function(){
+        var storeName = $('#inputGroceryStore').val();
+        var food = $('#inputFoodCategory').val();
+        var weight = $('#inputWeight').val();
+        var expiry = $('#expiryDate').val();
 
+        createEntry(storeName, food, weight, expiry);
+
+        
+    });
+    $("#submitItems").click(function(){
+        submitEntry();
+    });    
     //TEST
-    createEntry("Safeway", "tomatoes", "23", "08-01-2020");
-    createEntry("Safeway", "chicken breast", "5", "10-01-2020");
-    createEntry("Safeway", "lettuce", "44", "10-01-2020");
-    submitEntry();
+    
 
     // $('button').click(function () {
     //     var toAdd = $("input[name=message]").val();
@@ -41,11 +50,11 @@ function submitEntry() {
     submission = [];
 
     //TEST
-    // for (var i = 0; i < completedSubmission.length; i++) {
-    //     alert(JSON.stringify(completedSubmission[i]));
-    //   }
+    for (var i = 0; i < completedSubmission.length; i++) {
+         alert(JSON.stringify(completedSubmission[i]));
+       }
 
-    return completedSubmission;
+    // return completedSubmission;
 }
 
 function n(num){
