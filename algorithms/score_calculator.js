@@ -2,16 +2,6 @@ import * as FirestoreConnector from "../Paul/FirestoreConnector.js"
 
 $(document).ready(function () {
     datafy();
-
-    //Keysorted is an array!
-    var keysSorted = Object.keys(scores).sort(function(a,b){return scores[b]-scores[a]})
-
-    var newObj = {};
-    for (var i = 0; i < keysSorted.length; i++) {
-        newObj[keysSorted[i]] = scores[keysSorted[i]];
-    } //scores.key or scores["key"];
-    console.log(newObj);
-
 });
 
 //create an array:
@@ -27,18 +17,46 @@ var example = [
 var scores = {};
 var sortedScores = [];
 
+
+function convertNestedObjToArrOfObj(result) {
+    var res = [];
+    var jsonResult = JSON.parse(result);
+    for (var key in jsonResult) {
+            console.log(jsonResult[key])
+            res.push(jsonResult[key]);
+    }
+    return res;
+}
+
 function datafy() {
-    example.forEach(element => { //for each element in the input
-        var isExist = false;
-        for (var key in scores) { //check if it exists in local js object 'scores'
-            if (key == element.store_id) {
-                scores[key] += parseInt(element.food_weight, 10);
-                isExist = true;
+    FirestoreConnector.getLeaderboardData(true).then((result) => {
+        var arrOfLeaderboardData = convertNestedObjToArrOfObj(result);
+        arrOfLeaderboardData.forEach(element => { //for each element in the input
+            var isExist = false;
+            for (var key in scores) { //check if it exists in local js object 'scores'
+                if (key == element.store_id) {
+                    scores[key] += parseInt(element.food_weight, 10);
+                    isExist = true;
+                }
             }
-        }
-        if (!isExist){
-            scores[element.store_id] = parseInt(element.food_weight, 10);
-        }
+            if (!isExist){
+                scores[element.store_id] = parseInt(element.food_weight, 10);
+            }
+        });
+
+        console.log(scores);
+        
+        //Keysorted is an array!
+        var keysSorted = Object.keys(scores).sort(function(a,b){return scores[b]-scores[a]})
+        console.log(keysSorted);
+        
+        var arrOfLeaders = [];
+        for (var i = 0; i < keysSorted.length; i++) {
+            var newObj = {};
+            newObj[keysSorted[i]] = scores[keysSorted[i]];
+            arrOfLeaders.push(newObj);
+        } //scores.key or scores["key"];
+        console.log(arrOfLeaders);
     });
 }
 

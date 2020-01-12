@@ -112,24 +112,3 @@ function formatDate(date) {
 function n(num){
     return num > 9 ? "" + num: "0" + num;
 }
-
-
-
-//Paul's code:
-
-var example = [];
-
-function getAllLeaderboardData() {
-    FirestoreConnector.getLeaderboardData(true).then((result) => {
-        var jsonResult = JSON.parse(result);
-        for (var key in jsonResult) {
-                console.log(jsonResult[key])
-                example.push(jsonResult[key]);
-        }
-        console.log(example);
-    });
-}
-
-function Weiyoung(testdata){
-
-}
