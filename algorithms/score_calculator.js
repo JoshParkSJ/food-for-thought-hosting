@@ -51,18 +51,39 @@ export function datafy() {
             newObj[keysSorted[i]] = scores[keysSorted[i]];
             arrOfLeaders.push(newObj);
         } //scores.key or scores["key"];
-        console.log(arrOfLeaders);
 
         //Modify webpage: 
-        
+
+        // for 
+        var largestStoreScore = 0;
+        for (key in arrOfLeaders[0]) {
+            if (arrOfLeaders[0].hasOwnProperty(key)) {
+                largestStoreScore = arrOfLeaders[0][key];
+            }
+        }
+
         for (i = 0; i < arrOfLeaders.length; i++) {
             for (var key in arrOfLeaders[i]) {
                 var storeName = key;
                 var storeScore = arrOfLeaders[i][key];
+
+                var barGraphIncrement = 900 / largestStoreScore;
+                barGraphIncrement = barGraphIncrement.toFixed(2);
+
+                var barGraphBox = "<div style='width:"+ barGraphIncrement +"px;'class='barGraphBox'></div>"
+                var barGraph = '';
+
+
+                for (var j = 0; j < storeScore; j++) {
+                    barGraph = barGraph + barGraphBox;
+                }
+
+                console.log(barGraph)
+
                 var storeEntry = 
-                '<tr><th scope="row">' + (i+1) + '</th>' + '<td>' + 
-                storeName + '</td><td>' + 
-                storeScore + '</td></tr>';
+                '<tr><td>' + 
+                storeName + '</td><td class="barGraphContainer">' + 
+                storeScore + '<p></p>' + barGraph + '</td></tr>';
                 
                 $(storeEntry).appendTo("#tableBody");
             }
