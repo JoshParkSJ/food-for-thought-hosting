@@ -4,11 +4,23 @@
 
 body {
     height: 100vh;
+    background: url('./FoodBackground.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 
-.card h2 {
-    width: 80%;
-    text-align: center;
+
+.register-button {
+    background-color: main.$light-color;
+    border: 2px solid main.$lightest-color;
+    border-radius: 5px;
+    margin-top: 40vh;
+
+    h2 {
+        text-align: center;
+    }
 }
 

@@ -9,10 +9,20 @@ body {
 
 body {
   height: 100vh;
+  background: url("./FoodBackground.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-.card h2 {
-  width: 80%;
+.register-button {
+  background-color: green;
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin-top: 40vh;
+}
+.register-button h2 {
   text-align: center;
 }
 
