@@ -16,13 +16,6 @@
   <!-- Custom styles for this template -->
   <link href="css/main.css" rel="stylesheet">
   <link href="css/consumer.css" rel="stylesheet">
-
-  <!-- d3 script -->
-  <script type="text/javascript" src="d3/d3.min.js"></script>
-
-</head>
-
-
 </head>
 <body>
     <!-- navigation -->
@@ -37,7 +30,21 @@
           </div>
         </div>
     </nav>
-    
+
+    <!-- content -->
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Grocery Store</th>
+            <th scope="col">Score (kg)</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

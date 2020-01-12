@@ -1,14 +1,16 @@
 body {
-  background-color: black;
-  background-image: url("https://lovefoodhatewaste.ca/wp-content/uploads/2018/06/FoodBackground.jpg") no-repeat center center fixed;
+  height: 100vh;
+  background: url("./FoodBackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 
-body {
-  background-color: white;
+.container {
+  background: whitesmoke;
+  border-radius: 10px;
+  margin-top: 10vh;
 }
 
 /*# sourceMappingURL=consumer.css.map */
