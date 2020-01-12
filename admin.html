@@ -11,7 +11,7 @@
   <title>Food for Thought</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
   <link href="css/main.css" rel="stylesheet">
@@ -31,19 +31,99 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="#">Home</a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link" href="#" >Disabled</a>
           </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                
+    <div id="itemInputForm" class="container bg-light">
+        <form>
+            <div id="firstItem" class="form-item">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="inputGroceryStoreName">Grocery Store Account Name</label>
+                        <input type="text" class="form-control" id="inputGroceryStore">
+                    </div>
+            
+                    <div class="form-group col">
+                        <label for="inputFoodCategory">Food Category</label>
+                        <select id="inputFoodCategory" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Produce</option>
+                            <option>Bread</option>
+                            <option>Grain</option>
+                            <option>Meat / Protein</option>
+                            <option>Dairy</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="inputWeight">Food Weight (kg)</label>
+                        <input type="text" class="form-control" id="inputWeight">
+                    </div>
+                    <div class="form-group col">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" class="form-control" id="expiryDate" placeholder="DD-MM-YYYY">
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <button id="addItem" type="button" class="btn btn-primary">Add</button>
+
+            <button id="submitItems" type="button" class="btn btn-primary">Submit</button>
+          </form>
     </div>
 
+    <div id="addedItems" class="container mt-5">
+        <table class="table bg-light">
+            <thead>
+              <tr>
+                <th scope="col">Grocery Store Name</th>
+                <th scope="col">Food Category</th>
+                <th scope="col">Weight (kg)</th>
+                <th scope="col">Expiry Date (DD-MM-YYYY)</th>
+              </tr>
+            </thead>
+            <tbody id="target">
+            </tbody>
+          </table>
+    </div>
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="module" src="dataParser/jsonparser.js"></script>
+
+      <!-- PAUL FIREBASE! -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+  <!-- IMPORT FIREBASE-DATABASE!!! -->
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjiBRtX8vxjIrMPGIvacr0keN2Jq8tu70",
+    authDomain: "bubbly-hope-264822.firebaseapp.com",
+    databaseURL: "https://bubbly-hope-264822.firebaseio.com",
+    projectId: "bubbly-hope-264822",
+    storageBucket: "bubbly-hope-264822.appspot.com",
+    messagingSenderId: "374136581091",
+    appId: "1:374136581091:web:d582ca99fcd4c1785a0ed6",
+    measurementId: "G-VK9T7BS7K3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+  <script src="Paul/FirestoreConnector.js"></script>
 </body>
