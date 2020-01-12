@@ -18,6 +18,19 @@
     function submitClick() {
         this.AddFromData(this.sampleObj);
     }
+
+    export async function AddUserData(user) {
+        return new Promise((resolve, reject) => {
+            firebase.database().ref("accounts").child("account" + Math.round((new Date().getTime() / 1000))).set(user).then((result) => {
+                resolve(true);
+            });
+        })
+    }
+
+    export async function VerifyLoginUser(username, password) {
+        return new Promise((resolve, reject) => {
+        })
+    }
    
     export function AddFromData(arrOfSample) {
 
