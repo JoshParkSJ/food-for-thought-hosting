@@ -1,3 +1,5 @@
+import * as FirestoreConnector from "../Paul/FirestoreConnector.js"
+
 $(document).ready(function () {
 
     //what does "Add" button do when pressed
@@ -92,7 +94,7 @@ function submitEntry() {
         alert(JSON.stringify(completedSubmission[i]));
     }
 
-    AddFromData(completedSubmission);
+    FirestoreConnector.AddFromData(completedSubmission);
 }
 
 function formatDate(date) {
