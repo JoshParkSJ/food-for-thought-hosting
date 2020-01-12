@@ -16,3 +16,4 @@ $(document).ready(function() {
         $(storeEntry).appendTo("#tableBody")
     }
 });
+

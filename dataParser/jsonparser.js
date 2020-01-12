@@ -13,7 +13,7 @@ $(document).ready(function () {
         var now = new Date();
         var currentDate = formatDate(now);
         
-        if (isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
+        if (isValid(storeName, food, weight, expiry) && isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
             createEntry(storeName, food, weight, expiry, currentDate);
             
             var foodDonationItem =
@@ -29,6 +29,7 @@ $(document).ready(function () {
     //what does "Submit" button do when pressed
     $("#submitItems").click(function(){
         submitEntry();
+        $("#target").html('');
     });
 
     //Paul:
@@ -41,13 +42,21 @@ $(document).ready(function () {
 //array of Entries, "Add" adds stuff to this, "Submit" submits stuff to database
 var submission = [];
 
+function isValid(a, category, c, d) {
+    if (a == null || category=="Choose..." || c == null || d == null) {
+        alert("Please fill up all boxes.");
+        return false;
+    }
+    return true;
+}
+
 function isValidWeight(weight) {
     if (isNaN(weight)) {
         alert("Invalid Food Weight! Please input only numbers.");
         return false;
     }
 
-    if (weight < 0) {
+    if (weight <= 0) {
         alert("Invalid Food Weight! Please input a positive number.");
         return false;
     }
@@ -63,7 +72,7 @@ function isValidExpiry(target, currentDate) {
     // regular expression to match required date format
     var re = /^((0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])-[12]\d{3})$/;
 
-    if (target.match(re)) {
+    if (!target.match(re)) {
         alert("Invalid Expiry Date! Please input date in DD-MM-YYYY format.");
         // form.startdate.focus();
         return false;
@@ -71,7 +80,6 @@ function isValidExpiry(target, currentDate) {
 
     //if time allows, compare the two dates, make sure expiry date is not passed.
 
-    alert("All input fields have been validated!");
     return true;
 }
 
@@ -93,12 +101,6 @@ function createEntry(storeName, food, weight, expiry, dateString) {
 function submitEntry() {
     var completedSubmission = submission;
     submission = [];
-
-    //TEST
-    for (var i = 0; i < completedSubmission.length; i++) {
-        alert(JSON.stringify(completedSubmission[i]));
-    }
-
     FirestoreConnector.AddFromData(completedSubmission);
 }
 
