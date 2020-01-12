@@ -15,6 +15,8 @@
 
    <!-- Bootstrap core CSS -->
    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   <link href="css/loader.css" rel="stylesheet">
    
   <style>
     :root {
@@ -189,9 +191,9 @@ body {
                 More
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Donate Food</a>
-                <a class="dropdown-item" href="#">Recieve Food</a>
-                <a class="dropdown-item" href="#">View store donation rate</a>
+                <a class="dropdown-item" href="dashboard/donate.html">Donate Food</a>
+                <a class="dropdown-item" href="donateReceive.html">Recieve Food</a>
+                <a class="dropdown-item" href="consumer.html">View store donation rate</a>
               </div>
             </div>
           </li>
@@ -252,30 +254,15 @@ body {
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="register-page.js"></script>
+  <script src="login-page.js"></script>
+  <script src="loader.js"></script>
 </body>
 
 </html>
