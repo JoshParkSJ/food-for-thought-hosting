@@ -16,9 +16,19 @@ body {
   -o-background-size: cover;
 }
 
+a {
+  text-decoration: none !important;
+  color: #D4FF7B;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #6EE7FF;
+}
+
 .register-button {
-  background-color: green;
-  border: 2px solid blue;
+  background-color: #E8CC64;
+  border: 2px solid #FFAB69;
   border-radius: 5px;
   margin-top: 40vh;
   width: 300px;
@@ -26,6 +36,10 @@ body {
 }
 .register-button h2 {
   text-align: center;
+}
+
+.button-a :hover {
+  background-color: #FFAB69;
 }
 
 /*# sourceMappingURL=register.css.map */

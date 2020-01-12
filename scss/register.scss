@@ -11,6 +11,15 @@ body {
     -o-background-size: cover;
 }
 
+a {
+    text-decoration: none !important;
+    color: main.$middle-color
+}
+a:hover {
+    text-decoration: none !important;
+    color: main.$darkest-color
+
+}
 
 
 .register-button {
@@ -23,6 +32,12 @@ body {
 
     h2 {
         text-align: center;
+    }
+}
+
+.button-a {
+    :hover {
+        background-color: main.$lightest-color;
     }
 }
 
