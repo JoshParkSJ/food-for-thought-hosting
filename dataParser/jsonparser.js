@@ -2,103 +2,104 @@ $(document).ready(function () {
 
     //what does "Add" button do when pressed
     $("#addItem").click(function(){
-    var storeName = $('#inputGroceryStore').val();
-    var food = $('#inputFoodCategory').val();
-    var weight = $('#inputWeight').val();
-    var expiry = $('#expiryDate').val();
+        var storeName = $('#inputGroceryStore').val();
+        var food = $('#inputFoodCategory').val();
+        var weight = $('#inputWeight').val();
+        var expiry = $('#expiryDate').val();
+        
+        //current date
+        var now = new Date();
+        var currentDate = formatDate(now);
+        
+        if (isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
+            createEntry(storeName, food, weight, expiry, currentDate);
+            
+            var foodDonationItem =
+                "<tr><td>" + storeName +
+                "</td><td>" + food + "</td><td>" + weight +
+                "</td><td>" + expiry + "</td></tr>";
+
+            $(foodDonationItem).appendTo("#target");
+        }
     
-    //current date
-    var now = new Date();
-    var currentDate = formatDate(now);
-    
-    if (isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
-    createEntry(storeName, food, weight, expiry, currentDate);
-    }
-    
-    var foodDonationItem =
-    "<tr><td>" + storeName +
-    "</td><td>" + food + "</td><td>" + weight +
-    "</td><td>" + expiry + "</td></tr>";
-    $(foodDonationItem).appendTo("#target");
     });
     
     //what does "Submit" button do when pressed
     $("#submitItems").click(function(){
-    submitEntry();
+        submitEntry();
     });
     
-    });
+});
     
-    //array of Entries, "Add" adds stuff to this, "Submit" submits stuff to database
-    var submission = [];
-    
-    function isValidWeight(weight) {
+//array of Entries, "Add" adds stuff to this, "Submit" submits stuff to database
+var submission = [];
+
+function isValidWeight(weight) {
     if (isNaN(weight)) {
-    alert("Invalid Food Weight! Please input only numbers.");
-    return false;
+        alert("Invalid Food Weight! Please input only numbers.");
+        return false;
     }
-    
+
     if (weight > 0) {
-    alert("Invalid Food Weight! Please input a positive number.");
-    return false;
+        alert("Invalid Food Weight! Please input a positive number.");
+        return false;
     }
-    
+
     if (weight < 1000) {
-    alert("Invalid Food Weight! Please input a reasonable number (<1000).");
-    return false;
+        alert("Invalid Food Weight! Please input a reasonable number (<1000).");
+        return false;
     }
     return true;
-    }
-    
-    function isValidExpiry(target, currentDate) {
-    
+}
+
+function isValidExpiry(target, currentDate) {
     // regular expression to match required date format
     var re = /^((0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])-[12]\d{3})$/;
-    
+
     if (target.match(re)) {
-    alert("Invalid Expiry Date! Please input date in DD-MM-YYYY format.");
-    // form.startdate.focus();
-    return false;
+        alert("Invalid Expiry Date! Please input date in DD-MM-YYYY format.");
+        // form.startdate.focus();
+        return false;
     }
-    
+
     //if time allows, compare the two dates, make sure expiry date is not passed.
-    
+
     alert("All input fields have been validated!");
     return true;
-    }
-    
-    //creates an Entry
-    function createEntry(storeName, food, weight, expiry, dateString) {
+}
+
+//creates an Entry
+function createEntry(storeName, food, weight, expiry, dateString) {
     var entry = {
-    store_id : storeName,
-    food_name : food,
-    food_weight : weight,
-    expiry_date : expiry,
-    current_date : dateString
+        store_id : storeName,
+        food_name : food,
+        food_weight : weight,
+        expiry_date : expiry,
+        current_date : dateString
     };
-    
+
     //push this entry to submission
     submission.push(entry);
-    }
-    
-    //sends array of Entries to backend database
-    function submitEntry() {
+}
+
+//sends array of Entries to backend database
+function submitEntry() {
     var completedSubmission = submission;
     submission = [];
-    
+
     //TEST
     for (var i = 0; i < completedSubmission.length; i++) {
-    alert(JSON.stringify(completedSubmission[i]));
+        alert(JSON.stringify(completedSubmission[i]));
     }
-    
+
     AddFromData(completedSubmission);
-    }
-    
-    function formatDate(date) {
+}
+
+function formatDate(date) {
     return "" + n(date.getDate()) + "-" + n((date.getMonth() + 1)) + "-" + date.getFullYear() + " "
     + n(date.getHours()) + ":" + n(date.getMinutes());
-    }
-    
-    function n(num){
+}
+
+function n(num){
     return num > 9 ? "" + num: "0" + num;
-    }
+}
