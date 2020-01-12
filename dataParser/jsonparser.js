@@ -96,12 +96,6 @@ function createEntry(storeName, food, weight, expiry, dateString) {
 function submitEntry() {
     var completedSubmission = submission;
     submission = [];
-
-    //TEST
-    for (var i = 0; i < completedSubmission.length; i++) {
-        alert(JSON.stringify(completedSubmission[i]));
-    }
-
     FirestoreConnector.AddFromData(completedSubmission);
 }
 
