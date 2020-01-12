@@ -11,14 +11,12 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <link href="css/main.css" rel="stylesheet">
 
    <!-- Bootstrap core CSS -->
    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    
   <style>
-    
     :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
@@ -142,17 +140,17 @@ body {
   background-color: #3b5998;
 }
 
-#left-cards-registration1 {
+#foodBank {
   margin-top: 110px;
   margin-left: 85px;
 }
 
-#left-cards-registration2 {
+#groceryStore {
   margin-top: 70px;
   margin-left: 68px;
 }
 
-#card-colour {
+.card-colour {
   background-color: white;
 }
 
@@ -212,14 +210,14 @@ body {
 
              
              <div class="card w-100">
-                <div id="card-colour" class="card-body w-100">
-                  <button id="left-cards-registration1" type="button" class="btn btn-white card-title text-center" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <div id="foodBankButtonBig" class="card-body card-colour w-100">
+                  <button id="foodBank" type="button" class="btn card-title text-center">
                     Food Bank
                   </button>
               </div>
               <hr class="my-4">
-                <div id="card-colour" class="card-body w-100">
-                  <button id="left-cards-registration2" type="button" class="btn btn-white card-title text-center" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <div id="groceryStoreButtonBig" class="card-body card-colour w-100">
+                  <button id="groceryStore" type="button" class="btn card-title text-center">
                     Grocery Store
                   </button>
                 </div>
@@ -252,7 +250,7 @@ body {
                 <label for="inputConfirmPassword">Confirm password</label>
               </div>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/index.html" style = "color: white;">Register</a></button>
+              <button id="registerButton" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/index.html" style = "color: white;">Register</a></button>
               <a class="d-block text-center mt-2 small" href="#">Sign In</a>
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
@@ -287,7 +285,7 @@ body {
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="register-page.js"></script>
 </body>
 
 </html>
