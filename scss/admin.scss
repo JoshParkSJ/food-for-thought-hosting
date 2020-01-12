@@ -2,6 +2,13 @@
 
 @use "main";
 
+nav {
+    background-color: #5e72e4;
+    a { color: white; }
+    a:hover { color: white; }
+    padding-left: 8rem !important;
+  }
+
 body {
     height: 100vh;
     background: url('./FoodBackground.jpg') no-repeat center center fixed;
