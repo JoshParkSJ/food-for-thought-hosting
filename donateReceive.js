@@ -1,7 +1,9 @@
 
     $(document).ready(function(){
-        var fakeJSONdata = localStorage.getItem("whee");
-
+        // localStorage.clear();
+        var jsonData = JSON.parse(localStorage.getItem('count'));
+        
+        // test data
         // [
         //     {
         //         store_id: 'superstore',
@@ -19,11 +21,11 @@
         //     }
         // ]
     
-        for (i = 0; i < fakeJSONdata.length; i++) {
+        for (i = 0; i < jsonData.length; i++) {
             var counter = 0;
             
-            for (var value in fakeJSONdata[i]) {
-                var data = fakeJSONdata[i][value];
+            for (var value in jsonData[i]) {
+                var data = jsonData[i][value];
                 var enter = '';
                 var label = '';
                 switch(counter++) {

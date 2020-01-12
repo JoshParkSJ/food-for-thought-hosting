@@ -120,6 +120,7 @@ function submitEntryToScores() {
 }
 
 function submitEntryToDonations(storeName, food, weight, expiry, dateString) {
+    // var count = 0;
     var entry = {
         store_id : storeName,
         food_name : food,
@@ -130,9 +131,13 @@ function submitEntryToDonations(storeName, food, weight, expiry, dateString) {
     var entryArray = [];
     entryArray.push(entry);
     // send data to external JSON
-    localStorage.setItem("whee", entryArray);
+    // localStorage.setItem(count, entryArray);
+    // count++;
+    var data = JSON.stringify(entryArray);
+    localStorage.setItem('count', data);
     alert("sent!");
 }
+
 
 function formatDate(date) {
     return "" + n(date.getDate()) + "-" + n((date.getMonth() + 1)) + "-" + date.getFullYear() + " "
