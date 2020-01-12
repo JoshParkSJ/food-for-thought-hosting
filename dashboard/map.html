@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Food for Thought | Welcome!</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../css/main.css" rel="stylesheet">
+
+   <!-- Bootstrap core CSS -->
+   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
+   <style>
+   #map {
+     height: 800px;
+     width: 1450px; 
+   }
+   </style>
+
+</head>
+
+<body>
+  <div id="map"></div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #5e72e4;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style = "position: relative; left: -110px;">Food for Thought</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Search form -->
+      <div class="md-form mt-0" style = "position: relative; left: -110px;">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a role="button" class="btn btn-danger" href="register.html" style = "position: relative; left: 100px;">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 49.2827, lng: 237.1207},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzX--Aacm6496sHfMZQ0FbAtW5i1IN2aA&callback=initMap"
+    async defer></script>
+
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- PAUL FIREBASE! -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+  <!-- IMPORT FIREBASE-DATABASE!!! -->
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjiBRtX8vxjIrMPGIvacr0keN2Jq8tu70",
+    authDomain: "bubbly-hope-264822.firebaseapp.com",
+    databaseURL: "https://bubbly-hope-264822.firebaseio.com",
+    projectId: "bubbly-hope-264822",
+    storageBucket: "bubbly-hope-264822.appspot.com",
+    messagingSenderId: "374136581091",
+    appId: "1:374136581091:web:d582ca99fcd4c1785a0ed6",
+    measurementId: "G-VK9T7BS7K3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+  <script src="Paul/FirestoreConnector.js"></script>
+</body>
+
+</html>
