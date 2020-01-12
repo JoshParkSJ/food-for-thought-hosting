@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+  background: url("./FoodBackground.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+nav {
+  background-color: #5e72e4;
+}
+nav a {
+  color: white;
+}
+nav a:hover {
+  color: white;
+}
+
+.btn {
+  background-color: #5e72e4;
+  color: white;
+}
+
+/*# sourceMappingURL=logout.css.map */
