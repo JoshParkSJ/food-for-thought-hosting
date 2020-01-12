@@ -58,3 +58,11 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-the-big-picture/blob/gh-pages/LICENSE) license.
+
+
+
+Presentation
+
+4 million people in Canada experience food insecurity. 1 in 8 Canadian households struggle to put food on the table. 
+Also, food banks will often pick up donations free of charge.
+Restaurants have incentive to donate food - customers can see how effective restaurants are with their food waste
