@@ -201,28 +201,28 @@ body {
             <form class="form-signin">
             
             <div class="form-label-group">
-                <input class="form-control" required>
+                <input class="form-control" required id="storeName">
                 <label>Store Name</label>
                 </div>
 
               <div class="form-label-group">
-                <input class="form-control" required>
+                <input class="form-control" required id="foodCategory">
                 <label>Food Category</label>
               </div>
 
               <div class="form-label-group">
-                <input class="form-control" required>
-                <label>Food Quantity</label>
+                <input class="form-control" required id="foodAmount">
+                <label>Food Amount (kg)</label>
               </div>
 
               <div class="form-label-group">
-                <input class="form-control" required>
+                <input class="form-control" required id="expiryDate">
                 <label>Expiry Date (DD-MM-YYYY)</label>
               </div>
               
               <hr>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/index.html" style = "color: white;">Donate</a></button>
+              <button id = "weiyoung" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/donate.html" style = "color: white;">Donate</a></button>
               
               
             </form>
@@ -245,7 +245,6 @@ body {
 
 
 
-
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
@@ -254,6 +253,7 @@ body {
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../loader.js"></script>
+  <script type="module" src="../dataParser/jsonparser.js"></script>
 
 </body>
 

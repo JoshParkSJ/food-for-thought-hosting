@@ -2,7 +2,7 @@ import * as FirestoreConnector from "../Paul/FirestoreConnector.js"
 
 $(document).ready(function () {
 
-    //what does "Add" button do when pressed
+    //admin.html
     $("#addItem").click(function(){
         var storeName = $('#inputGroceryStore').val();
         var food = $('#inputFoodCategory').val();
@@ -16,6 +16,7 @@ $(document).ready(function () {
         if (isValid(storeName, food, weight, expiry) && isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
             createEntry(storeName, food, weight, expiry, currentDate);
             
+            //send data from upper box into lower list
             var foodDonationItem =
                 "<tr><td>" + storeName +
                 "</td><td>" + food + "</td><td>" + weight +
@@ -26,11 +27,30 @@ $(document).ready(function () {
     
     });
     
-    //what does "Submit" button do when pressed
+    //admin.html
     $("#submitItems").click(function(){
-        submitEntry();
-        $("#target").html('');
+        submitEntryToScores();
+        $("#target").html(''); //for clearing the forms
     });
+
+    //donate.html
+    $("#weiyoung").click(function(){
+        var store = $('#storeName').val();
+        var food = $('#foodCategory').val();
+        var weight = $('#foodAmount').val();
+        var expiry = $('#expiryDate').val();
+        
+        //current date
+        var now = new Date();
+        var currentDate = formatDate(now);
+
+        if (isValidWeight(weight) && isValidExpiry(expiry, currentDate)) {
+            submitEntryToDonations(store, food, weight, expiry, currentDate);
+            alert("submitted data to firebase!");
+        }
+        
+    });
+
 
 });
     
@@ -88,15 +108,30 @@ function createEntry(storeName, food, weight, expiry, dateString) {
         current_date : dateString
     };
 
-    //push this entry to submission
     submission.push(entry);
 }
 
 //sends array of Entries to backend database
-function submitEntry() {
+function submitEntryToScores() {
     var completedSubmission = submission;
     submission = [];
+    //send data to firebase
     FirestoreConnector.AddFromData(completedSubmission);
+}
+
+function submitEntryToDonations(storeName, food, weight, expiry, dateString) {
+    var entry = {
+        store_id : storeName,
+        food_name : food,
+        food_weight : weight,
+        expiry_date : expiry,
+        current_date : dateString
+    };
+    var entryArray = [];
+    entryArray.push(entry);
+    //send data to firebase
+    // FirestoreConnector.AddFromData(entryArray);
+    alert("recieved!");
 }
 
 function formatDate(date) {
