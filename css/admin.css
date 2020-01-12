@@ -26,20 +26,4 @@ a:hover {
   color: grey;
 }
 
-.register-button {
-  background-color: #E8CC64;
-  border: 2px solid #FFAB69;
-  border-radius: 5px;
-  margin-top: 40vh;
-  width: 300px;
-  height: 200px;
-}
-.register-button h2 {
-  text-align: center;
-}
-
-.button-a :hover {
-  background-color: #FFAB69;
-}
-
-/*# sourceMappingURL=register.css.map */
+/*# sourceMappingURL=admin.css.map */
