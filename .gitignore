@@ -104,4 +104,8 @@ dist
 .tern-port
 
 # Stores VSCode versions used for testing VSCode extensions
+<<<<<<< HEAD
 .vscode-test
+=======
+.vscode-test
+>>>>>>> 73192eaf00834a6351a567c1abc5b19a8d458b64

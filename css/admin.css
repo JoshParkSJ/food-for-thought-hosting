@@ -26,20 +26,19 @@ a:hover {
   color: grey;
 }
 
-.register-button {
-  background-color: #E8CC64;
-  border: 2px solid #FFAB69;
-  border-radius: 5px;
-  margin-top: 40vh;
-  width: 300px;
-  height: 200px;
-}
-.register-button h2 {
-  text-align: center;
+#itemInputForm {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 10vh;
 }
 
-.button-a :hover {
-  background-color: #FFAB69;
+#addedItems {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 2px solid white;
 }
 
-/*# sourceMappingURL=register.css.map */
+/*# sourceMappingURL=admin.css.map */

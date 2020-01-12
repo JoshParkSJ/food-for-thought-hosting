@@ -21,23 +21,18 @@ a:hover {
 
 }
 
-
-.register-button {
-    background-color: main.$light-color;
-    border: 2px solid main.$lightest-color;
-    border-radius: 5px;
-    margin-top: 40vh;
-    width: 300px;
-    height: 200px;
-
-    h2 {
-        text-align: center;
-    }
+#itemInputForm {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10vh;
 }
 
-.button-a {
-    :hover {
-        background-color: main.$lightest-color;
-    }
+#addedItems {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid white;
 }
 
