@@ -21,6 +21,8 @@ body {
   border: 2px solid blue;
   border-radius: 5px;
   margin-top: 40vh;
+  width: 300px;
+  height: 200px;
 }
 .register-button h2 {
   text-align: center;
