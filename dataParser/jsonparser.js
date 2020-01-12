@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
+    //TEST
     createEntry("Safeway", "tomatoes", "23", "08-01-2020");
     createEntry("Safeway", "chicken breast", "5", "10-01-2020");
     createEntry("Safeway", "lettuce", "44", "10-01-2020");
+    submitEntry();
 
     // $('button').click(function () {
     //     var toAdd = $("input[name=message]").val();
     //     $('#messages').append("<p>" + toAdd + "</p>");
     // });
 
-    submitEntry();
+    
 });
 
 var submission = [];
@@ -38,12 +40,12 @@ function submitEntry() {
     var completedSubmission = submission;
     submission = [];
 
-    //this is for test
-    for (var i = 0; i < completedSubmission.length; i++) {
-        alert(JSON.stringify(completedSubmission[i]));
-      }
+    //TEST
+    // for (var i = 0; i < completedSubmission.length; i++) {
+    //     alert(JSON.stringify(completedSubmission[i]));
+    //   }
 
-    // return completedSubmission;
+    return completedSubmission;
 }
 
 function n(num){
