@@ -26,7 +26,9 @@
 
    <!-- Bootstrap core CSS -->
    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   <link href="./assets/css/argon-dashboard.css?v=1.1.1" rel="stylesheet" />
+   <link href="assets/css/argon-dashboard.css?v=1.1.1" rel="stylesheet" />
+   <link href="../css/loader.css" rel="stylesheet">
+
    
    
 </head>
@@ -286,14 +288,18 @@
     </div>
   </div>
 
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
   <!--   Core   -->
-  <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
-  <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!--   Optional JS   -->
-  <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
-  <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+  <script src="assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+  <script src="assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
   <!--   Argon JS   -->
-  <script src="./assets/js/argon-dashboard.min.js?v=1.1.1"></script>
+  <script src="assets/js/argon-dashboard.min.js?v=1.1.1"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
@@ -302,6 +308,8 @@
         application: "argon-dashboard-free"
       });
   </script>
+  <script src="/loader.js"></script>
+
 </body>
 
 </html>
