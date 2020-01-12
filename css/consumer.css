@@ -24,4 +24,19 @@ nav a:hover {
   margin-top: 10vh;
 }
 
+.barGraphBox {
+  height: 10px;
+  background-color: #5e72e4;
+}
+
+.barGraphContainer {
+  display: inline-flex;
+  align-items: center;
+  width: 1000px;
+}
+
+.barGraphContainer p {
+  margin-left: 10px;
+}
+
 /*# sourceMappingURL=consumer.css.map */
