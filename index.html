@@ -73,28 +73,24 @@
     </div>
   </nav>
 
-<<<<<<< HEAD
-  <!-- Page Content -->
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1 class="mt-5">The Big Picture</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>
-          <button id="submitBtn" onclick="submitClick()">Store data</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script> -->
+  <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 49.2827, lng: 237.1207},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzX--Aacm6496sHfMZQ0FbAtW5i1IN2aA&callback=initMap"
+    async defer></script>
 
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
+  <!-- PAUL FIREBASE! -->
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
 
@@ -124,22 +120,6 @@
 
 </script>
   <script src="Paul/FirestoreConnector.js"></script>
-=======
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 49.2827, lng: 237.1207},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzX--Aacm6496sHfMZQ0FbAtW5i1IN2aA&callback=initMap"
-    async defer></script>
->>>>>>> 73192eaf00834a6351a567c1abc5b19a8d458b64
 </body>
 
 </html>
