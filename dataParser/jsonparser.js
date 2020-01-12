@@ -40,12 +40,12 @@ function isValidWeight(weight) {
         return false;
     }
 
-    if (weight > 0) {
+    if (weight < 0) {
         alert("Invalid Food Weight! Please input a positive number.");
         return false;
     }
 
-    if (weight < 1000) {
+    if (weight > 1000) {
         alert("Invalid Food Weight! Please input a reasonable number (<1000).");
         return false;
     }
