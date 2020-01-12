@@ -7,7 +7,7 @@ $(document).ready(function(){
         $('#groceryStoreButtonBig').css("background-color", 'white');
         $('#groceryStore').css("color", "black");
 
-        $('#LogInButton').html("<a href='/dashboard/foodbank-index.html' style = 'color: white;'>LOG IN</a>");
+        $('#LogInButton').html("<a href='../dashboard/foodbank-index.html' style = 'color: white;'>LOG IN</a>");
     });
 
     $('#groceryStore').click(function() {
@@ -17,6 +17,6 @@ $(document).ready(function(){
         $('#foodBank').css("color", "black");
 
 
-        $('#LogInButton').html("<a href='/dashboard/index.html' style = 'color: white;'>LOG IN</a>");
+        $('#LogInButton').html("<a href='../dashboard/index.html' style = 'color: white;'>LOG IN</a>");
     });
 });

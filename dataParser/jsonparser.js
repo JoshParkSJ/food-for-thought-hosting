@@ -129,9 +129,9 @@ function submitEntryToDonations(storeName, food, weight, expiry, dateString) {
     };
     var entryArray = [];
     entryArray.push(entry);
-    //send data to firebase
-    // FirestoreConnector.AddFromData(entryArray);
-    alert("recieved!");
+    // send data to external JSON
+    localStorage.setItem("whee", entryArray);
+    alert("sent!");
 }
 
 function formatDate(date) {

@@ -1,21 +1,23 @@
 
     $(document).ready(function(){
-        var fakeJSONdata = [
-            {
-                store_id: 'superstore',
-                food_name: 'produce',
-                food_weight: '900',
-                expiry_date: '20-02-2020',
-                current_date: '12-01-2020'
-            },
-            {
-                store_id: 'safeway',
-                food_name: 'meat',
-                food_weight: '10',
-                expiry_date: '01-02-2020',
-                current_date: '12-01-2020'
-            }
-        ]
+        var fakeJSONdata = localStorage.getItem("whee");
+
+        // [
+        //     {
+        //         store_id: 'superstore',
+        //         food_name: 'produce',
+        //         food_weight: '900',
+        //         expiry_date: '20-02-2020',
+        //         current_date: '12-01-2020'
+        //     },
+        //     {
+        //         store_id: 'safeway',
+        //         food_name: 'meat',
+        //         food_weight: '10',
+        //         expiry_date: '01-02-2020',
+        //         current_date: '12-01-2020'
+        //     }
+        // ]
     
         for (i = 0; i < fakeJSONdata.length; i++) {
             var counter = 0;
