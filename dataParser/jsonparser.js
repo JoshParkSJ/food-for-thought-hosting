@@ -116,6 +116,20 @@ function n(num){
 
 
 //Paul's code:
+
+var example = [];
+
 function getAllLeaderboardData() {
-    FirestoreConnector.getLeaderboardData(true);
+    FirestoreConnector.getLeaderboardData(true).then((result) => {
+        var jsonResult = JSON.parse(result);
+        for (var key in jsonResult) {
+                console.log(jsonResult[key])
+                example.push(jsonResult[key]);
+        }
+        console.log(example);
+    });
+}
+
+function Weiyoung(testdata){
+
 }

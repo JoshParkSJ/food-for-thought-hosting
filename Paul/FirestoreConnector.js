@@ -20,33 +20,32 @@
     }
    
     export function AddFromData(arrOfSample) {
-        // donation_count_ref.on('value', function(snapshot) {
-        //     console.log("SNAPSHOT: " + JSON.stringify(snapshot));
-        //     firebase.database().ref("donation_info" + snapshot.val().donation_count).set(sampleObj[0]);
-        //     donation_count_ref.set({"donation_count": snapshot.val().donation_count + 1});
-        // });
 
         for (var i = 0; i < arrOfSample.length; i++)
         {
             firebase.database().ref("donations").child("donation_info" + Math.round((new Date().getTime() / 1000)) + "Instance " + i).set(arrOfSample[i]);
 
         }
-        
-
-        alert("Hey");
     }
 
-    export function getLeaderboardData(isAll) {
-        var data;
-        if (isAll)
-        {
-            //HAS TO BE "VALUE"!!!
-            firebase.database().ref().child("donations").once("value", function(snapshot)
+    export async function getLeaderboardData(isAll) {
+        let getDonations = new Promise((resolve, reject) => {
+            firebase.database().ref().child("donations").once("value", function(val)
             {
-                snapshot.forEach(function(child){
-                    console.log(child.key + ": " + JSON.stringify(child.val()));
-                })
+                resolve(val);
+            });
+        })
+
+        let getEachDonation = new Promise((resolve, reject)=> {
+            getDonations.then(function(snapshot) {
+                //console.log(JSON.stringify(snapshot));
+                //console.log(snapshot.length);
+                resolve(JSON.stringify(snapshot));
             })
-        }
-        return data;
+        })
+
+        return Promise.all([getEachDonation]).then((result) => {
+            //console.log(result);
+            return result;
+        });
     }
