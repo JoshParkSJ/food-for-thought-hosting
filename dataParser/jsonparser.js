@@ -1,3 +1,5 @@
+import { AddFromData } from '../Paul/FirestoreConnector.js';
+
 $(document).ready(function () {
 
     //what does "Add" button do when pressed
