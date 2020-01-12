@@ -5,18 +5,16 @@ $(document).ready(function () {
 });
 
 //create an array:
-var example = [
-    {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Bread","food_weight":"100","store_id":"Safeway"},
-    {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Grain","food_weight":"40","store_id":"Save-On-Foods"},
-    {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"46","store_id":"Save-On-Foods"},
-    {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"501","store_id":"Costco"},
-    {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"273","store_id":"Walmart"}
+// var example = [
+//     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Bread","food_weight":"100","store_id":"Safeway"},
+//     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Grain","food_weight":"40","store_id":"Save-On-Foods"},
+//     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"46","store_id":"Save-On-Foods"},
+//     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"501","store_id":"Costco"},
+//     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Produce","food_weight":"273","store_id":"Walmart"}
 
-];
+// ];
 
 var scores = {};
-var sortedScores = [];
-
 
 function convertNestedObjToArrOfObj(result) {
     var res = [];
