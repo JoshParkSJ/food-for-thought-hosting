@@ -1,5 +1,6 @@
 body {
-  background-image: url("FoodBackground.jpg") no-repeat center center fixed;
+  background-color: black;
+  background-image: url("images/FoodBackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

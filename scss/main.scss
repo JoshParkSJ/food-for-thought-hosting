@@ -2,15 +2,14 @@
 // create separate .scss files for each page 
 
 body {
-    background-image: url('FoodBackground.jpg') no-repeat center center fixed;
+    background-color: black;
+    background-image: url('images/FoodBackground.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
   
-
-
 // theme colors 
 $darkest-color: black;
 $darker-color: grey;
