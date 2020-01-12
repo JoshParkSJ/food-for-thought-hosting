@@ -31,6 +31,11 @@ $(document).ready(function () {
         submitEntry();
         $("#target").html('');
     });
+
+    //Paul:
+    $("#getAllLeaderboardData").click(function(){
+        getAllLeaderboardData();
+    });
     
 });
     
@@ -106,4 +111,11 @@ function formatDate(date) {
 
 function n(num){
     return num > 9 ? "" + num: "0" + num;
+}
+
+
+
+//Paul's code:
+function getAllLeaderboardData() {
+    FirestoreConnector.getLeaderboardData(true);
 }

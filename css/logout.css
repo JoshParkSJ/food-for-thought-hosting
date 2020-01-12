@@ -9,7 +9,6 @@ body {
 
 nav {
   background-color: #5e72e4;
-  padding-left: 8rem !important;
 }
 nav a {
   color: white;
@@ -18,10 +17,9 @@ nav a:hover {
   color: white;
 }
 
-.container {
-  background: whitesmoke;
-  border-radius: 10px;
-  margin-top: 10vh;
+.btn {
+  background-color: #5e72e4;
+  color: white;
 }
 
-/*# sourceMappingURL=consumer.css.map */
+/*# sourceMappingURL=logout.css.map */

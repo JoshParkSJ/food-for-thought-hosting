@@ -10,21 +10,23 @@
   <title>Food for Thought | Welcome!</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/loader.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/loader.css" rel="stylesheet">
 
    <!-- Bootstrap core CSS -->
-   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    
   <style>
+    
     :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
 
 body {
-  background: url("css/healthy-food.jpg");
+  background: url("../css/healthy-food.jpg");
   background-size: 100%;
 }
 
@@ -141,17 +143,17 @@ body {
   background-color: #3b5998;
 }
 
-#foodBank {
+#left-cards-registration1 {
   margin-top: 110px;
   margin-left: 85px;
 }
 
-#groceryStore {
+#left-cards-registration2 {
   margin-top: 70px;
   margin-left: 68px;
 }
 
-.card-colour {
+#card-colour {
   background-color: white;
 }
 
@@ -163,7 +165,7 @@ body {
  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #5e72e4;">
-    <div class="container">
+    <div class="container" style = "position: relative; right: 125px;">
       <a class="navbar-brand" href="index.html">Food for Thought</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -174,27 +176,14 @@ body {
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       </div>
       
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive" style = "position: relative; left: 250px;">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a role="button" class="btn btn-success" href="login.html">Log In</a>
+            <a role="button" class="btn btn-success" href="#">Donate</a>
           </li>
           <li class = "invisible">--</li>
           <li class="nav-item active">
-            <a role="button" class="btn btn-success" href="register.html">Register</a>
-          </li>
-          <li class = "invisible">--</li>
-          <li>
-            <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="dashboard/donate.html">Donate Food</a>
-                <a class="dropdown-item" href="donateReceive.html">Recieve Food</a>
-                <a class="dropdown-item" href="consumer.html">View store donation rate</a>
-              </div>
-            </div>
+            <a role="button" class="btn btn-danger" href="../logout.html">Log out</a>
           </li>
         </ul>
       </div>
@@ -206,56 +195,36 @@ body {
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
-          <div class="card-img-left d-none d-md-flex">
-             <!-- Background image for card set in CSS! -->
-
-             
-             <div class="card w-100">
-                <div id="foodBankButtonBig" class="card-body card-colour w-100">
-                  <button id="foodBank" type="button" class="btn card-title text-center">
-                    Food Bank
-                  </button>
-              </div>
-              <hr class="my-4">
-                <div id="groceryStoreButtonBig" class="card-body card-colour w-100">
-                  <button id="groceryStore" type="button" class="btn card-title text-center">
-                    Grocery Store
-                  </button>
-                </div>
-              </div>
-              
-        
-          </div>
+          
           <div class="card-body">
-            <h5 class="card-title text-center">Register</h5>
+            <h5 class="card-title text-center">Food Donation</h5>
             <form class="form-signin">
+            
+            <div class="form-label-group">
+                <input class="form-control" required>
+                <label>Store Name</label>
+                </div>
+
               <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-                <label for="inputUserame">Username</label>
+                <input class="form-control" required>
+                <label>Food Category</label>
               </div>
 
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-                <label for="inputEmail">Email address</label>
+                <input class="form-control" required>
+                <label>Food Quantity</label>
+              </div>
+
+              <div class="form-label-group">
+                <input class="form-control" required>
+                <label>Expiry Date (DD-MM-YYYY)</label>
               </div>
               
               <hr>
 
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
-              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/index.html" style = "color: white;">Donate</a></button>
               
-              <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-                <label for="inputConfirmPassword">Confirm password</label>
-              </div>
-
-              <button id="registerButton" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><a href="/dashboard/index.html" style = "color: white;">Register</a></button>
-              <a class="d-block text-center mt-2 small" href="#">Sign In</a>
-              <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+              
             </form>
           </div>
         </div>
@@ -277,19 +246,15 @@ body {
 
 
 
-
-
-
-
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="register-page.js"></script>
-  <script src="loader.js"></script>
+  <script src="../loader.js"></script>
+
 </body>
 
 </html>

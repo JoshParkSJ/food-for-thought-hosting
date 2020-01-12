@@ -28,10 +28,25 @@
 
         for (var i = 0; i < arrOfSample.length; i++)
         {
-            firebase.database().ref("donation_info" + Math.round((new Date().getTime() / 1000)) + "Instance " + i).set(arrOfSample[i]);
+            firebase.database().ref("donations").child("donation_info" + Math.round((new Date().getTime() / 1000)) + "Instance " + i).set(arrOfSample[i]);
 
         }
         
 
         alert("Hey");
+    }
+
+    export function getLeaderboardData(isAll) {
+        var data;
+        if (isAll)
+        {
+            //HAS TO BE "VALUE"!!!
+            firebase.database().ref().child("donations").once("value", function(snapshot)
+            {
+                snapshot.forEach(function(child){
+                    console.log(child.key + ": " + JSON.stringify(child.val()));
+                })
+            })
+        }
+        return data;
     }
