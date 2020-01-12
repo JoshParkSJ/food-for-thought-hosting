@@ -9,6 +9,8 @@ $(document).ready(function () {
         var weight = $('#inputWeight').val();
         var expiry = $('#expiryDate').val();
 
+        createEntry(storeName, food, weight, expiry);
+
         // if (!isValidWeight(weight)) { 
         //     alert("Invalid Food Weight! Please input only numbers.");
         // } else if (!isValidExpiry(expiry)) { 
