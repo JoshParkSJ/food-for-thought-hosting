@@ -2,6 +2,13 @@
 
 @use "main";
 
-h1 {
-    color: main.$light-color;
+body {
+    height: 100vh;
 }
+
+
+.card h2 {
+    width: 80%;
+    text-align: center;
+}
+
