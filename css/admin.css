@@ -26,19 +26,4 @@ a:hover {
   color: grey;
 }
 
-#itemInputForm {
-  background-color: whitesmoke;
-  border-radius: 10px;
-  border: 2px solid white;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 10vh;
-}
-
-#addedItems {
-  background-color: whitesmoke;
-  border-radius: 10px;
-  border: 2px solid white;
-}
-
 /*# sourceMappingURL=admin.css.map */
