@@ -1,6 +1,13 @@
 // scss page for consumer
 @use 'main';
 
+nav {
+  background-color: #5e72e4;
+  a { color: white; }
+  a:hover { color: white; }
+  padding-left: 8rem !important;
+}
+
 .container {
   background: whitesmoke;
   border-radius: 10px;
