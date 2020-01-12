@@ -32,11 +32,6 @@ $(document).ready(function () {
         $("#target").html('');
     });
 
-    //Paul:
-    $("#getAllLeaderboardData").click(function(){
-        getAllLeaderboardData();
-    });
-    
 });
     
 //array of Entries, "Add" adds stuff to this, "Submit" submits stuff to database

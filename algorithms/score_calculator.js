@@ -1,9 +1,5 @@
 import * as FirestoreConnector from "../Paul/FirestoreConnector.js"
 
-$(document).ready(function () {
-    datafy();
-});
-
 //create an array:
 // var example = [
 //     {"current_date":"11-01-2020 22:59","expiry_date":"31-01-2020","food_name":"Bread","food_weight":"100","store_id":"Safeway"},
@@ -26,7 +22,8 @@ function convertNestedObjToArrOfObj(result) {
     return res;
 }
 
-function datafy() {
+export function datafy() {
+    console.log("Running");
     FirestoreConnector.getLeaderboardData(true).then((result) => {
         var arrOfLeaderboardData = convertNestedObjToArrOfObj(result);
         arrOfLeaderboardData.forEach(element => { //for each element in the input
@@ -55,6 +52,21 @@ function datafy() {
             arrOfLeaders.push(newObj);
         } //scores.key or scores["key"];
         console.log(arrOfLeaders);
+
+        //Modify webpage: 
+        
+        for (i = 0; i < arrOfLeaders.length; i++) {
+            for (var key in arrOfLeaders[i]) {
+                var storeName = key;
+                var storeScore = arrOfLeaders[i][key];
+                var storeEntry = 
+                '<tr><th scope="row">' + (i+1) + '</th>' + '<td>' + 
+                storeName + '</td><td>' + 
+                storeScore + '</td></tr>';
+                
+                $(storeEntry).appendTo("#tableBody");
+            }
+    }
     });
 }
 
