@@ -32,11 +32,6 @@ $(document).ready(function () {
         $("#target").html('');
     });
 
-    //Paul:
-    $("#getAllLeaderboardData").click(function(){
-        getAllLeaderboardData();
-    });
-    
 });
     
 //array of Entries, "Add" adds stuff to this, "Submit" submits stuff to database
@@ -111,11 +106,4 @@ function formatDate(date) {
 
 function n(num){
     return num > 9 ? "" + num: "0" + num;
-}
-
-
-
-//Paul's code:
-function getAllLeaderboardData() {
-    FirestoreConnector.getLeaderboardData(true);
 }
